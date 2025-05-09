@@ -5,122 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News & Views</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google AdSense Verification -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021770397712812"
+       crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .blog-highlight {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb, #1e40af);
+      border: 2px solid #facc15;
+      box-shadow: 0 0 20px rgba(250, 204, 21, 0.7);
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gray-900 bg-opacity-90 text-white font-sans">
 
   <!-- Header -->
   <header class="bg-black bg-opacity-70 p-6 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-bold text-white">News & Views</h1>
-      <nav>
+      <marquee behavior="scroll" direction="left" class="text-yellow-400 font-semibold text-sm w-full ml-6">
+        📢 Running News: Updates from Pakistani News Channels | Live Cricket Headlines from ESPNcricinfo...
+      </marquee>
+      <nav class="hidden md:flex">
         <a href="#home" class="mx-4 hover:text-blue-400">Home</a>
         <a href="#categories" class="mx-4 hover:text-blue-400">Categories</a>
+        <a href="#sports" class="mx-4 hover:text-blue-400">Sports</a>
+        <a href="#newspapers" class="mx-4 hover:text-blue-400">Newspapers</a>
         <a href="#live-news" class="mx-4 hover:text-blue-400">Live News</a>
+        <a href="#featured-news" class="mx-4 hover:text-blue-400">Top Headlines</a>
+        <a href="#upload" class="mx-4 hover:text-blue-400">Upload</a>
         <a href="#about" class="mx-4 hover:text-blue-400">About</a>
         <a href="#contact" class="mx-4 hover:text-blue-400">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d');">
-    <div class="bg-black bg-opacity-60 p-10 rounded-xl text-center max-w-xl backdrop-blur-md">
+  <!-- Main Section -->
+  <section id="home" class="h-screen flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-black bg-opacity-60 p-10 rounded-xl text-center max-w-xl">
       <h2 class="text-4xl font-bold mb-4">Stay Informed. Stay Ahead.</h2>
       <p class="text-lg mb-6">The latest news and sharp opinions, straight from your laptop.</p>
       <a href="#categories" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition">Explore Categories</a>
     </div>
   </section>
 
-  <!-- Categories Section -->
-  <section id="categories" class="py-16 px-6 bg-gray-950">
-    <div class="max-w-6xl mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-10 text-white">Browse by Category</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-800 rounded-xl p-6 hover:scale-105 transition cursor-pointer shadow-lg">
-          <h4 class="text-xl font-semibold text-blue-400 mb-2">Politics</h4>
-          <p class="text-gray-300">Latest insights, debates, and decisions shaping the world.</p>
-        </div>
-        <div class="bg-gray-800 rounded-xl p-6 hover:scale-105 transition cursor-pointer shadow-lg">
-          <h4 class="text-xl font-semibold text-green-400 mb-2">Technology</h4>
-          <p class="text-gray-300">Trends, gadgets, and innovations that matter.</p>
-        </div>
-        <div class="bg-gray-800 rounded-xl p-6 hover:scale-105 transition cursor-pointer shadow-lg">
-          <h4 class="text-xl font-semibold text-yellow-400 mb-2">Sports</h4>
-          <p class="text-gray-300">Scores, updates, and stories from the world of sports.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Live News Section -->
-  <section id="live-news" class="py-16 px-6 bg-gray-900">
-    <div class="max-w-6xl mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-10 text-white">Live News</h3>
-      <!-- Geo News -->
-      <div class="mb-8">
-        <h4 class="text-xl font-semibold text-blue-400 mb-2">Geo News</h4>
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/live_stream?channel=UCt4atlExw8aj3Bm79nv1fig" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <!-- Dawn News -->
-      <div class="mb-8">
-        <h4 class="text-xl font-semibold text-green-400 mb-2">Dawn News</h4>
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/live_stream?channel=UC9vLdyHatOhRrCwQXqzGC2g" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <!-- ARY News -->
-      <div>
-        <h4 class="text-xl font-semibold text-yellow-400 mb-2">ARY News</h4>
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/live_stream?channel=UCMmpLL2ucRHAXbNHiCPyIyg" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured News Section -->
-  <section id="featured-news" class="py-16 px-6 bg-gray-950">
+  <!-- Blogs -->
+  <section id="latest-blogs" class="py-16 px-6 bg-gray-950 bg-opacity-90">
     <div class="max-w-6xl mx-auto">
-      <h3 class="text-3xl font-bold mb-10 text-center text-white">Top Headlines</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
-          <h4 class="text-xl font-semibold text-blue-400 mb-2">Geo News: Inflation Update</h4>
-          <p class="text-gray-300 mb-2">Pakistan's inflation rate dropped slightly in April, according to new data from the central bank.</p>
-          <a href="https://www.geo.tv/latest-news" target="_blank" class="text-blue-500 hover:underline">Read more</a>
+      <h3 class="text-3xl font-bold mb-10 text-center text-white">Latest Blogs</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg blog-highlight">
+          <h4 class="text-2xl font-semibold text-white mb-2">The Economic Shift in 2025</h4>
+          <p class="text-sm text-yellow-200 mb-2">May 9, 2025</p>
+          <p class="text-gray-100 mb-4">How economic trends are shaping global markets and emerging economies.</p>
+          <a href="#" class="text-yellow-300 hover:underline font-bold">Read More</a>
         </div>
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
-          <h4 class="text-xl font-semibold text-green-400 mb-2">Dawn: Energy Crisis</h4>
-          <p class="text-gray-300 mb-2">Power outages continue to impact southern cities amid rising summer temperatures.</p>
-          <a href="https://www.dawn.com/latest-news" target="_blank" class="text-green-500 hover:underline">Read more</a>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg blog-highlight">
+          <h4 class="text-2xl font-semibold text-white mb-2">Cryptocurrency: Risk or Reward?</h4>
+          <p class="text-sm text-yellow-200 mb-2">May 6, 2025</p>
+          <p class="text-gray-100 mb-4">Understanding crypto markets and investor strategies in a volatile world.</p>
+          <a href="#" class="text-yellow-300 hover:underline font-bold">Read More</a>
         </div>
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
-          <h4 class="text-xl font-semibold text-yellow-400 mb-2">ARY: Cricket Series</h4>
-          <p class="text-gray-300 mb-2">Pakistan vs. New Zealand series enters a critical phase as both teams eye the final win.</p>
-          <a href="https://arynews.tv/latest-news/" target="_blank" class="text-yellow-500 hover:underline">Read more</a>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg blog-highlight">
+          <h4 class="text-2xl font-semibold text-white mb-2">Global Conflicts and Their Impacts</h4>
+          <p class="text-sm text-yellow-200 mb-2">May 5, 2025</p>
+          <p class="text-gray-100 mb-4">Exploring current wars and their effects on international stability and economy.</p>
+          <a href="#" class="text-yellow-300 hover:underline font-bold">Read More</a>
         </div>
+      </div>
+
+      <!-- Google AdSense Ad Unit -->
+      <div class="mt-12 flex justify-center">
+        <ins class="adsbygoogle"
+             style="display:block; width:100%; height:90px"
+             data-ad-client="ca-pub-6021770397712812"
+             data-ad-slot="9876543210"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-16 px-6 bg-gray-800">
-    <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-4">About News & Views</h3>
-      <p class="text-lg text-gray-300">News & Views brings you curated headlines and in-depth commentary. Designed to run directly from your laptop with no servers or hosting required.</p>
+  <!-- Sports News Section -->
+  <section id="sports" class="py-16 px-6 bg-gray-900 bg-opacity-80">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-10 text-center text-white">Sports News</h3>
+      <ul id="sports-news-list" class="space-y-4 text-lg text-gray-100 text-center">
+        <li>🏏 Loading cricket headlines...</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6 bg-gray-900">
-    <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
-      <p class="text-gray-400 mb-4">Have questions or suggestions? Contact us at:</p>
-      <p class="text-blue-400 font-semibold">
-        <a href="mailto:imtiazaslm.rock@gmail.com" class="hover:underline">imtiazaslm.rock@gmail.com</a>
-      </p>
-    </div>
-  </section>
+  <!-- News Fetch Scripts -->
+  <script>
+    async function fetchNews(url, updateCallback, fallbackMessage, append = false) {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        if (!data.items || !Array.isArray(data.items)) throw new Error('Invalid data format');
+        updateCallback(data.items, null, append);
+      } catch (error) {
+        console.error("News fetch failed:", error);
+        updateCallback(null, fallbackMessage);
+      }
+    }
 
-  <!-- Footer -->
-  <footer class="bg-black p-4 text-center text-gray-500">
-    © 2025 News & Views. All rights reserved.
-  </footer>
+    function updateSportsList(items, fallback, append = false) {
+      const sportsList = document.getElementById('sports-news-list');
+      if (!append) sportsList.innerHTML = '';
+      if (!items) {
+        if (!append) sportsList.innerHTML = `<li>${fallback}</li>`;
+        return;
+      }
+      items.slice(0, 5).forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = '🏏 ' + item.title;
+        sportsList.appendChild(li);
+      });
+    }
+
+    const newsFeeds = [
+      {
+        url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.espncricinfo.com/rss/content/story/feeds/0.xml',
+        callback: updateSportsList,
+        fallback: '⚠️ Unable to load Cricket news.'
+      }
+    ];
+
+    function updateAllFeeds() {
+      newsFeeds.forEach(feed => {
+        fetchNews(feed.url, feed.callback, feed.fallback);
+      });
+    }
+
+    updateAllFeeds();
+    setInterval(updateAllFeeds, 60000);
+  </script>
 
 </body>
 </html>
