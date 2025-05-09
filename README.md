@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News & Views</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google AdSense Verification -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021770397712812"
-       crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021770397712812" crossorigin="anonymous"></script>
   <style>
     body {
       background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
@@ -30,7 +28,6 @@
 </head>
 <body class="bg-gray-900 bg-opacity-90 text-white font-sans">
 
-  <!-- Header -->
   <header class="bg-black bg-opacity-70 p-6 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-bold text-white">News & Views</h1>
@@ -48,76 +45,98 @@
     </div>
   </header>
 
-  <!-- Main Section -->
-  <section id="home" class="h-screen flex items-center justify-center bg-black bg-opacity-50">
-    <div class="bg-black bg-opacity-60 p-10 rounded-xl text-center max-w-xl">
-      <h2 class="text-4xl font-bold mb-4">Stay Informed. Stay Ahead.</h2>
-      <p class="text-lg mb-6">The latest news and sharp opinions, straight from your laptop.</p>
-      <a href="#categories" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition">Explore Categories</a>
-    </div>
-  </section>
+  <main>
+    <section id="home" class="h-screen flex items-center justify-center bg-black bg-opacity-50">
+      <div class="bg-black bg-opacity-60 p-10 rounded-xl text-center max-w-xl">
+        <h2 class="text-4xl font-bold mb-4">Stay Informed. Stay Ahead.</h2>
+        <p class="text-lg mb-6">The latest news and sharp opinions, straight from your laptop.</p>
+        <a href="#categories" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition">Explore Categories</a>
+      </div>
+    </section>
 
-  <!-- Placeholder Sections for Navigation -->
-  <section id="categories" class="py-12 px-4 text-center">
-    <h2 class="text-2xl font-bold text-yellow-300">Categories Section</h2>
-    <p class="text-white">(Content coming soon...)</p>
-  </section>
+    <section id="categories" class="py-12 px-4 text-center">
+      <h2 class="text-2xl font-bold text-yellow-300">Categories</h2>
+      <ul class="text-white space-y-2 mt-4">
+        <li><a href="#sports" class="hover:underline">🏏 Sports Headlines (Cricinfo)</a></li>
+        <li><a href="#ary-news" class="hover:underline">📰 ARY News</a></li>
+        <li><a href="#jang-news" class="hover:underline">📰 Jang Newspaper</a></li>
+        <li><a href="#featured-news" class="hover:underline">📢 Top Headlines (BISE, PBCC, etc.)</a></li>
+        <li><a href="#upload" class="hover:underline">📤 Upload Documents</a></li>
+      </ul>
+    </section>
 
-  <section id="newspapers" class="py-12 px-4 text-center">
-    <h2 class="text-2xl font-bold text-yellow-300">Newspapers Section</h2>
-    <p class="text-white">(Content coming soon...)</p>
-  </section>
-
-  <section id="featured-news" class="py-12 px-4 text-center">
-    <h2 class="text-2xl font-bold text-yellow-300">Top Headlines Section</h2>
-    <p class="text-white">(Content coming soon...)</p>
-  </section>
-
-  <section id="upload" class="py-12 px-4 text-center">
-    <h2 class="text-2xl font-bold text-yellow-300">Upload Section</h2>
-    <p class="text-white">(Content coming soon...)</p>
-  </section>
-
-  <section id="about" class="py-12 px-4 text-center">
-    <h2 class="text-2xl font-bold text-yellow-300">About Us</h2>
-    <p class="text-white">(Content coming soon...)</p>
-  </section>
-
-  <section id="contact" class="py-12 px-4 text-center">
-    <h2 class="text-2xl font-bold text-yellow-300">Contact Section</h2>
-    <p class="text-white">(Content coming soon...)</p>
-  </section>
-
-  <!-- Live News Channels -->
-  <section id="live-news" class="py-16 px-6 bg-gray-950 bg-opacity-90">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-3xl font-bold mb-10 text-center text-white">Live News Channels</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
-          <h4 class="text-xl font-bold text-yellow-400 mb-2">ARY News (Live)</h4>
-          <iframe class="w-full h-48" src="https://www.youtube.com/embed/live_stream?channel=UCqwUrj10mAEsqezcItqvwEw" frameborder="0" allowfullscreen></iframe>
+    <section id="newspapers" class="py-12 px-4 text-center">
+      <h2 class="text-2xl font-bold text-yellow-300">Newspapers Section</h2>
+      <div class="text-white space-y-4 mt-6">
+        <div id="ary-news">
+          <h3 class="text-xl font-semibold">ARY News</h3>
+          <iframe src="https://www.arynews.tv/" class="w-full h-96 border-2 border-yellow-500"></iframe>
         </div>
-        <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
-          <h4 class="text-xl font-bold text-yellow-400 mb-2">Geo News (Live)</h4>
-          <iframe class="w-full h-48" src="https://www.youtube.com/embed/live_stream?channel=UCr8oc-LOaApCXWLjBp-F3CQ" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
-          <h4 class="text-xl font-bold text-yellow-400 mb-2">92 News (Live)</h4>
-          <iframe class="w-full h-48" src="https://www.youtube.com/embed/live_stream?channel=UC27z6mRtD9pN7M3msqRBj2A" frameborder="0" allowfullscreen></iframe>
+        <div id="jang-news">
+          <h3 class="text-xl font-semibold mt-8">Jang Newspaper</h3>
+          <iframe src="https://jang.com.pk/" class="w-full h-96 border-2 border-yellow-500"></iframe>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Sports News Section -->
-  <section id="sports" class="py-12 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h3 class="text-2xl font-bold text-yellow-300 mb-4">Cricket Sports Headlines</h3>
-      <ul id="sports-news-list" class="list-disc list-inside text-white space-y-2"></ul>
-    </div>
-  </section>
+    <section id="live-news" class="py-16 px-6 bg-gray-950 bg-opacity-90">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-10 text-center text-white">Live News Channels</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
+            <h4 class="text-xl font-bold text-yellow-400 mb-2">ARY News (Live)</h4>
+            <iframe class="w-full h-48" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCqwUrj10mAEsqezcItqvwEw" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
+            <h4 class="text-xl font-bold text-yellow-400 mb-2">Geo News (Live)</h4>
+            <iframe class="w-full h-48" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCr8oc-LOaApCXWLjBp-F3CQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
+            <h4 class="text-xl font-bold text-yellow-400 mb-2">92 News (Live)</h4>
+            <iframe class="w-full h-48" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UC27z6mRtD9pN7M3msqRBj2A" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- News Fetch Scripts -->
+    <section id="sports" class="py-12 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Cricket Sports Headlines</h3>
+        <ul id="sports-news-list" class="list-disc list-inside text-white space-y-2"></ul>
+      </div>
+    </section>
+
+    <section id="featured-news" class="py-12 px-4 text-center">
+      <h2 class="text-2xl font-bold text-yellow-300">Top Headlines Section</h2>
+      <p class="text-white">Linked sources: <a href="https://www.biselahore.com/" target="_blank" class="text-blue-400 underline">BISE Lahore</a>, <a href="https://www.bisefsd.edu.pk/" target="_blank" class="text-blue-400 underline">BISE Faisalabad</a>, <a href="https://www.bisegrw.edu.pk/" target="_blank" class="text-blue-400 underline">BISE Gujranwala</a>, <a href="https://www.pbcc.edu.pk/" target="_blank" class="text-blue-400 underline">PBCC News</a></p>
+    </section>
+
+    <section id="upload" class="py-12 px-4 text-center">
+      <h2 class="text-2xl font-bold text-yellow-300">Upload Section</h2>
+      <form class="mt-4 max-w-lg mx-auto bg-gray-800 p-6 rounded-xl shadow-lg">
+        <label class="block text-left mb-2">Upload a Document:</label>
+        <input type="file" class="block w-full p-2 border border-gray-600 bg-gray-900 text-white rounded" />
+        <button type="submit" class="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white">Submit</button>
+      </form>
+    </section>
+
+    <section id="about" class="py-12 px-4 text-center">
+      <h2 class="text-2xl font-bold text-yellow-300">About Us</h2>
+      <p class="text-white max-w-2xl mx-auto mt-4">
+        Welcome to <strong>News & Views</strong> — your one-stop destination for the latest headlines, live Pakistani news channels, and curated opinions from around the web. This site is supported and enhanced by ChatGPT to ensure timely updates, engaging layout, and accurate integration of RSS feeds and live content. Whether you're looking for cricket scores, political developments, or top headlines, we've got you covered.
+      </p>
+    </section>
+
+    <section id="contact" class="py-12 px-4 text-center">
+      <h2 class="text-2xl font-bold text-yellow-300">Contact Us</h2>
+      <p class="text-white mt-4">
+        For inquiries, suggestions, or feedback, feel free to reach out via email:
+        <br />
+        <a href="mailto:imtiazaslam.rock@gmail.com" class="text-blue-400 underline">imtiazaslam.rock@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
   <script>
     async function fetchNews(url, updateCallback, fallbackMessage, append = false) {
       try {
