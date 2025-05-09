@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-adsense-account" content="ca-pub-6021770397712812">
   <title>News & Views</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021770397712812" crossorigin="anonymous"></script>
@@ -122,65 +123,21 @@
 
     <section id="about" class="py-12 px-4 text-center">
       <h2 class="text-2xl font-bold text-yellow-300">About Us</h2>
-      <p class="text-white max-w-2xl mx-auto mt-4">
-        Welcome to <strong>News & Views</strong> — your one-stop destination for the latest headlines, live Pakistani news channels, and curated opinions from around the web. This site is supported and enhanced by ChatGPT to ensure timely updates, engaging layout, and accurate integration of RSS feeds and live content. Whether you're looking for cricket scores, political developments, or top headlines, we've got you covered.
-      </p>
+      <p class="text-white max-w-2xl mx-auto mt-4">We are dedicated to bringing the most accurate and timely news updates, from local stories to global events. Stay informed and connected with the latest headlines.</p>
     </section>
 
-    <section id="contact" class="py-12 px-4 text-center">
+    <section id="contact" class="py-12 px-4 text-center bg-black bg-opacity-60">
       <h2 class="text-2xl font-bold text-yellow-300">Contact Us</h2>
-      <p class="text-white mt-4">
-        For inquiries, suggestions, or feedback, feel free to reach out via email:
-        <br />
-        <a href="mailto:imtiazaslam.rock@gmail.com" class="text-blue-400 underline">imtiazaslam.rock@gmail.com</a>
-      </p>
+      <form class="mt-4 max-w-lg mx-auto bg-gray-800 p-6 rounded-xl shadow-lg">
+        <label class="block text-left mb-2">Your Message:</label>
+        <textarea class="block w-full p-2 border border-gray-600 bg-gray-900 text-white rounded" rows="4"></textarea>
+        <button type="submit" class="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white">Send Message</button>
+      </form>
     </section>
   </main>
 
-  <script>
-    async function fetchNews(url, updateCallback, fallbackMessage, append = false) {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        if (!data.items || !Array.isArray(data.items)) throw new Error('Invalid data format');
-        updateCallback(data.items, null, append);
-      } catch (error) {
-        console.error("News fetch failed:", error);
-        updateCallback(null, fallbackMessage);
-      }
-    }
-
-    function updateSportsList(items, fallback, append = false) {
-      const sportsList = document.getElementById('sports-news-list');
-      if (!append) sportsList.innerHTML = '';
-      if (!items) {
-        if (!append) sportsList.innerHTML = `<li>${fallback}</li>`;
-        return;
-      }
-      items.slice(0, 5).forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = '🏏 ' + item.title;
-        sportsList.appendChild(li);
-      });
-    }
-
-    const newsFeeds = [
-      {
-        url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.espncricinfo.com/rss/content/story/feeds/0.xml',
-        callback: updateSportsList,
-        fallback: '⚠️ Unable to load Cricket news.'
-      }
-    ];
-
-    function updateAllFeeds() {
-      newsFeeds.forEach(feed => {
-        fetchNews(feed.url, feed.callback, feed.fallback);
-      });
-    }
-
-    updateAllFeeds();
-    setInterval(updateAllFeeds, 60000);
-  </script>
-
+  <footer class="py-6 bg-gray-900 text-center text-white">
+    <p>&copy; 2025 News & Views. All rights reserved.</p>
+  </footer>
 </body>
 </html>
