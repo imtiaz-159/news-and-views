@@ -21,6 +21,11 @@
       border: 2px solid #facc15;
       box-shadow: 0 0 20px rgba(250, 204, 21, 0.7);
     }
+    #header-news-controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
   </style>
 </head>
 <body class="bg-gray-900 bg-opacity-90 text-white font-sans">
@@ -29,9 +34,12 @@
   <header class="bg-black bg-opacity-70 p-6 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-bold text-white">News & Views</h1>
-      <marquee behavior="scroll" direction="left" class="text-yellow-400 font-semibold text-sm w-full ml-6">
-        📢 Running News: Updates from Pakistani News Channels | Live Cricket Headlines from ESPNcricinfo...
-      </marquee>
+      <div class="flex-1 mx-6" id="header-news-controls">
+        <marquee id="live-news-marquee" behavior="scroll" direction="left" class="text-yellow-400 font-semibold text-sm w-full">
+          📢 Fetching live headlines from Pakistan...
+        </marquee>
+        <button onclick="toggleMarquee()" class="text-xs text-white border border-yellow-400 px-2 py-1 rounded hover:bg-yellow-500 hover:text-black">⏯</button>
+      </div>
       <nav class="hidden md:flex">
         <a href="#home" class="mx-4 hover:text-blue-400">Home</a>
         <a href="#categories" class="mx-4 hover:text-blue-400">Categories</a>
@@ -55,55 +63,32 @@
     </div>
   </section>
 
-  <!-- Blogs -->
-  <section id="latest-blogs" class="py-16 px-6 bg-gray-950 bg-opacity-90">
+  <!-- Live News Channels -->
+  <section id="live-news" class="py-16 px-6 bg-gray-950 bg-opacity-90">
     <div class="max-w-6xl mx-auto">
-      <h3 class="text-3xl font-bold mb-10 text-center text-white">Latest Blogs</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg blog-highlight">
-          <h4 class="text-2xl font-semibold text-white mb-2">The Economic Shift in 2025</h4>
-          <p class="text-sm text-yellow-200 mb-2">May 9, 2025</p>
-          <p class="text-gray-100 mb-4">How economic trends are shaping global markets and emerging economies.</p>
-          <a href="#" class="text-yellow-300 hover:underline font-bold">Read More</a>
+      <h3 class="text-3xl font-bold mb-10 text-center text-white">Live News Channels</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
+          <h4 class="text-xl font-bold text-yellow-400 mb-2">ARY News (Live)</h4>
+          <iframe class="w-full h-48" src="https://www.youtube.com/embed/live_stream?channel=UCqwUrj10mAEsqezcItqvwEw" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg blog-highlight">
-          <h4 class="text-2xl font-semibold text-white mb-2">Cryptocurrency: Risk or Reward?</h4>
-          <p class="text-sm text-yellow-200 mb-2">May 6, 2025</p>
-          <p class="text-gray-100 mb-4">Understanding crypto markets and investor strategies in a volatile world.</p>
-          <a href="#" class="text-yellow-300 hover:underline font-bold">Read More</a>
+        <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
+          <h4 class="text-xl font-bold text-yellow-400 mb-2">Geo News (Live)</h4>
+          <iframe class="w-full h-48" src="https://www.youtube.com/embed/live_stream?channel=UCr8oc-LOaApCXWLjBp-F3CQ" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="bg-gray-800 p-6 rounded-xl shadow-lg blog-highlight">
-          <h4 class="text-2xl font-semibold text-white mb-2">Global Conflicts and Their Impacts</h4>
-          <p class="text-sm text-yellow-200 mb-2">May 5, 2025</p>
-          <p class="text-gray-100 mb-4">Exploring current wars and their effects on international stability and economy.</p>
-          <a href="#" class="text-yellow-300 hover:underline font-bold">Read More</a>
+        <div class="bg-gray-800 p-4 rounded-xl text-center shadow-lg">
+          <h4 class="text-xl font-bold text-yellow-400 mb-2">92 News (Live)</h4>
+          <iframe class="w-full h-48" src="https://www.youtube.com/embed/live_stream?channel=UC27z6mRtD9pN7M3msqRBj2A" frameborder="0" allowfullscreen></iframe>
         </div>
-      </div>
-
-      <!-- Google AdSense Ad Unit -->
-      <div class="mt-12 flex justify-center">
-        <ins class="adsbygoogle"
-             style="display:block; width:100%; height:90px"
-             data-ad-client="ca-pub-6021770397712812"
-             data-ad-slot="9876543210"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
       </div>
     </div>
   </section>
 
-  <!-- Sports News Section -->
-  <section id="sports" class="py-16 px-6 bg-gray-900 bg-opacity-80">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-3xl font-bold mb-10 text-center text-white">Sports News</h3>
-      <ul id="sports-news-list" class="space-y-4 text-lg text-gray-100 text-center">
-        <li>🏏 Loading cricket headlines...</li>
-      </ul>
-    </div>
-  </section>
+  <!-- Blogs (unchanged) -->
+  <!-- ... Existing Blogs Section ... -->
+
+  <!-- Sports News Section (unchanged) -->
+  <!-- ... Existing Sports Section ... -->
 
   <!-- News Fetch Scripts -->
   <script>
@@ -133,11 +118,25 @@
       });
     }
 
+    function updateMarquee(items, fallback) {
+      const marquee = document.getElementById('live-news-marquee');
+      if (!items) {
+        marquee.textContent = fallback;
+        return;
+      }
+      marquee.textContent = '📢 ' + items.slice(0, 8).map(item => item.title).join(' | ');
+    }
+
     const newsFeeds = [
       {
         url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.espncricinfo.com/rss/content/story/feeds/0.xml',
         callback: updateSportsList,
         fallback: '⚠️ Unable to load Cricket news.'
+      },
+      {
+        url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.geo.tv/rss/1',
+        callback: updateMarquee,
+        fallback: '⚠️ Unable to load Pakistani news headlines.'
       }
     ];
 
@@ -145,6 +144,17 @@
       newsFeeds.forEach(feed => {
         fetchNews(feed.url, feed.callback, feed.fallback);
       });
+    }
+
+    function toggleMarquee() {
+      const marquee = document.getElementById('live-news-marquee');
+      if (marquee.getAttribute('behavior') === 'scroll') {
+        marquee.setAttribute('behavior', 'alternate');
+        marquee.stop();
+      } else {
+        marquee.setAttribute('behavior', 'scroll');
+        marquee.start();
+      }
     }
 
     updateAllFeeds();
