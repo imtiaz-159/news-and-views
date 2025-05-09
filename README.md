@@ -34,12 +34,6 @@
   <header class="bg-black bg-opacity-70 p-6 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-bold text-white">News & Views</h1>
-      <div class="flex-1 mx-6" id="header-news-controls">
-        <marquee id="live-news-marquee" behavior="scroll" direction="left" class="text-yellow-400 font-semibold text-sm w-full">
-          📢 Fetching live headlines from Pakistan...
-        </marquee>
-        <button onclick="toggleMarquee()" class="text-xs text-white border border-yellow-400 px-2 py-1 rounded hover:bg-yellow-500 hover:text-black">⏯</button>
-      </div>
       <nav class="hidden md:flex">
         <a href="#home" class="mx-4 hover:text-blue-400">Home</a>
         <a href="#categories" class="mx-4 hover:text-blue-400">Categories</a>
@@ -63,6 +57,37 @@
     </div>
   </section>
 
+  <!-- Placeholder Sections for Navigation -->
+  <section id="categories" class="py-12 px-4 text-center">
+    <h2 class="text-2xl font-bold text-yellow-300">Categories Section</h2>
+    <p class="text-white">(Content coming soon...)</p>
+  </section>
+
+  <section id="newspapers" class="py-12 px-4 text-center">
+    <h2 class="text-2xl font-bold text-yellow-300">Newspapers Section</h2>
+    <p class="text-white">(Content coming soon...)</p>
+  </section>
+
+  <section id="featured-news" class="py-12 px-4 text-center">
+    <h2 class="text-2xl font-bold text-yellow-300">Top Headlines Section</h2>
+    <p class="text-white">(Content coming soon...)</p>
+  </section>
+
+  <section id="upload" class="py-12 px-4 text-center">
+    <h2 class="text-2xl font-bold text-yellow-300">Upload Section</h2>
+    <p class="text-white">(Content coming soon...)</p>
+  </section>
+
+  <section id="about" class="py-12 px-4 text-center">
+    <h2 class="text-2xl font-bold text-yellow-300">About Us</h2>
+    <p class="text-white">(Content coming soon...)</p>
+  </section>
+
+  <section id="contact" class="py-12 px-4 text-center">
+    <h2 class="text-2xl font-bold text-yellow-300">Contact Section</h2>
+    <p class="text-white">(Content coming soon...)</p>
+  </section>
+
   <!-- Live News Channels -->
   <section id="live-news" class="py-16 px-6 bg-gray-950 bg-opacity-90">
     <div class="max-w-6xl mx-auto">
@@ -84,11 +109,13 @@
     </div>
   </section>
 
-  <!-- Blogs (unchanged) -->
-  <!-- ... Existing Blogs Section ... -->
-
-  <!-- Sports News Section (unchanged) -->
-  <!-- ... Existing Sports Section ... -->
+  <!-- Sports News Section -->
+  <section id="sports" class="py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-yellow-300 mb-4">Cricket Sports Headlines</h3>
+      <ul id="sports-news-list" class="list-disc list-inside text-white space-y-2"></ul>
+    </div>
+  </section>
 
   <!-- News Fetch Scripts -->
   <script>
@@ -118,25 +145,11 @@
       });
     }
 
-    function updateMarquee(items, fallback) {
-      const marquee = document.getElementById('live-news-marquee');
-      if (!items) {
-        marquee.textContent = fallback;
-        return;
-      }
-      marquee.textContent = '📢 ' + items.slice(0, 8).map(item => item.title).join(' | ');
-    }
-
     const newsFeeds = [
       {
         url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.espncricinfo.com/rss/content/story/feeds/0.xml',
         callback: updateSportsList,
         fallback: '⚠️ Unable to load Cricket news.'
-      },
-      {
-        url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.geo.tv/rss/1',
-        callback: updateMarquee,
-        fallback: '⚠️ Unable to load Pakistani news headlines.'
       }
     ];
 
@@ -144,17 +157,6 @@
       newsFeeds.forEach(feed => {
         fetchNews(feed.url, feed.callback, feed.fallback);
       });
-    }
-
-    function toggleMarquee() {
-      const marquee = document.getElementById('live-news-marquee');
-      if (marquee.getAttribute('behavior') === 'scroll') {
-        marquee.setAttribute('behavior', 'alternate');
-        marquee.stop();
-      } else {
-        marquee.setAttribute('behavior', 'scroll');
-        marquee.start();
-      }
     }
 
     updateAllFeeds();
